@@ -1,0 +1,16 @@
+#General settings:
+
+dataset_name: "food101"
+batch_size: 32
+input_shape: [224, 224, 3]
+activation: "softmax"
+
+
+#Training settings:
+epochs: 2
+learning_rate: 0.001
+
+#Fine_Tuning Settings:
+fine_tune: False
+fine_tune_layers: 10
+fine_tune_lr: 0.0001
