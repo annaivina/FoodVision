@@ -64,6 +64,7 @@ class ModelBuilder:
         """
         Saves the trained model.
         """
+        os.makedirs(os.path.dirname(path), exist_ok=True)
         self.model.save(path)
         print(f"Model saved at {path}")
 
@@ -72,7 +73,6 @@ class ModelBuilder:
         """
         Loads a saved model.
         """
-        os.makedirs(os.path.dirname(path), exist_ok=True)
         self.model = tf.keras.models.load_model(path)
         print(f"Model loaded from {path}")
 
