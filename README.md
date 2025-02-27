@@ -1,2 +1,3 @@
 # FoodVision
-Here is the code for doing the classification of the Pictures of Code using CNN model. + fine tuned version of it
+Here is the CNN algo based  EffB0 net for doing the classification of the Food Pictures.\
+Version allows to run the original model --> fine tune with the configurable parameters in configs.yaml and do predictions 
