@@ -8,12 +8,13 @@ def get_callbacks(experiment_name="", model_name="", is_fine_tune=False):
 
     log_dir = os.path.join(experiment_name, "logs", datetime.datetime.now().strftime("%Y%m%d-%H%M%S"))
     checkpoint_dir = os.path.join(experiment_name, "checkpoints", model_name )
+   
     os.makedirs(checkpoint_dir, exist_ok=True)
     os.makedirs(log_dir, exist_ok=True)
 
 
-    #Tensorboard 
-    tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir=log_dir, histogram_freq=1)
+    #Tensorboard - there is no more tensorboard. One can try just save the logs
+    csvlogger_callback = tf.keras.callbacks.CSVLogger(filename=os.path.join(log_dir,"training.log"), separator='.', append=False)
     #Early stopping
     early_stopping = tf.keras.callbacks.EarlyStopping(monitor='val_loss', patience=3)
     #Saving best model 
@@ -22,7 +23,7 @@ def get_callbacks(experiment_name="", model_name="", is_fine_tune=False):
                                                              monitor="val_loss")
     
 
-    return [tensorboard_callback, early_stopping, checkpoint_callback] if is_fine_tune else [tensorboard_callback]
+    return [csvlogger_callback, early_stopping, checkpoint_callback] if is_fine_tune else [csvlogger_callback]
 
   
 
