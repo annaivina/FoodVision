@@ -14,7 +14,7 @@ def get_callbacks(experiment_name="", model_name="", is_fine_tune=False):
 
 
     #Tensorboard - there is no more tensorboard. One can try just save the logs
-    csvlogger_callback = tf.keras.callbacks.CSVLogger(filename=os.path.join(log_dir,"training.log"), separator='.', append=False)
+    csvlogger_callback = tf.keras.callbacks.CSVLogger(filename=os.path.join(log_dir,"training.csv"), separator='.', append=False)
     #Early stopping
     early_stopping = tf.keras.callbacks.EarlyStopping(monitor='val_loss', patience=3)
     #Saving best model 
