@@ -16,7 +16,7 @@ class ModelBuilder:
         self.lr = lr
         self.base_model = tf.keras.applications.EfficientNetB0(include_top=False, input_shape=self.input_shape)
         self.model = self._build_model()
-        self.compile_model()
+        self.compile_model() #Automatically compile the model 
 
 
     def _build_model(self):

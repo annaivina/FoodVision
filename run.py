@@ -24,7 +24,7 @@ def run_experiment(mode="", experiment_name="example_experiment", config_path = 
         print("\n🟢 Starting Model Training...")
         callbacks = get_callbacks(experiment_name=experiment_name, model_name=model_name, is_fine_tune=config['fine_tune'])
 
-        trainer = Trainer(model_build.model, train_data, test_data, epochs=config['epochs'], callbacks=callbacks)
+        trainer = Trainer(model_build, train_data, test_data, epochs=config['epochs'], callbacks=callbacks)
         trainer.train()
         model_build.save_model(f"{experiment_name}/models/{model_name}.keras")
 
