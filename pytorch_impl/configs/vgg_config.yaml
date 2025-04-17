@@ -1,0 +1,12 @@
+datasets:
+  train_dir: "/Users/annushka/Desktop/pytorch_food_vision/data/images_food101/train"
+  test_dir: "/Users/annushka/Desktop/pytorch_food_vision/data/images_food101/test"
+  epochs: 20
+  batch_size: 32
+  img_size: 64
+
+model:
+  input_shape: 3 #input color channels 
+  hidden_units: 10 
+  lr: 0.001
+
